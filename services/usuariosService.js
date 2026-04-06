@@ -49,6 +49,40 @@ async function listarTarefas() {
     return resultado.rows;
 }
 
+async function editarTarefas(id_tarefa, descricao, setor, prioridade, status) {
+    if (!id_tarefa) throw new Error("ID da tarefa é obrigatório");
+
+    const resultado = await pool.query(
+        `UPDATE tarefa
+         SET descricao = $1,
+             setor = $2,
+             prioridade = $3,
+             status = $4
+         WHERE id_tarefa = $5
+         RETURNING *`,
+        [descricao, setor, prioridade, status, id_tarefa]
+    );
+
+    return resultado.rows[0];
+}
+
+async function excluirTarefas(id_tarefa) {
+    if (!id_tarefa) throw new Error("ID da tarefa é obrigatório");
+
+    const resultado = await pool.query(
+        `DELETE FROM tarefa
+         WHERE id_tarefa = $1
+         RETURNING *`,
+        [id_tarefa]
+    );
+
+    if (resultado.rows.length === 0) {
+        throw new Error("Tarefa não encontrada");
+    }
+
+    return resultado.rows[0];
+}
+
 async function listarUsuarios() {
     const resultado = await pool.query(
         "SELECT * FROM usuarios ORDER BY id_usuario"
@@ -60,5 +94,7 @@ module.exports = {
     criarUsuario,
     criarTarefa,
     listarUsuarios,
-    listarTarefas
+    listarTarefas,
+    editarTarefas,
+    excluirTarefas
 };

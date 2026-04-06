@@ -15,6 +15,12 @@ const PORT = 3000;
 
   app.get('/api/tarefas', usuariosController.listarTarefas);
 
+  app.put('/api/tarefas/:id', usuariosController.editarTarefas);
+
+  app.delete('/api/tarefas/:id', usuariosController.excluirTarefas);
+
+
+
   app.listen(3000, () => {
     console.log("Servidor rodando em http://localhost:3000");
 });

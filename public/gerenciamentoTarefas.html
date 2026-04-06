@@ -1,173 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tarefas</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciar Tarefas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="./index.html" class="nav-link active">Inicio</a></li>
+      <li class="nav-item"><a href="./cadastroUsuarios.html" class="nav-link">Cadastro de Usuarios</a></li>
+      <li class="nav-item"><a href="./cadastroTarefas.html" class="nav-link">Cadastro de Tarefas</a></li>
+      <li class="nav-item"><a href="./gerenciamentoTarefas.html" class="nav-link">Gerenciar Tarefas</a></li>
+    </ul>
+  </header>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-  </head>
-
-  <body>
-    <header class="d-flex justify-content-center py-3">
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a href="./index.html" class="nav-link active" aria-current="page">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a href="./cadastroUsuarios.html" class="nav-link">Cadastro de Usuarios</a>
-          </li>
-          <li class="nav-item">
-            <a href="./cadastroTarefas.html" class="nav-link">Cadastro de Tarefas</a>
-          </li>
-          <li class="nav-item">
-            <a href="./gerenciamentoTarefas.html" class="nav-link">Gerenciar Tarefas</a>
-          </li>
-        </ul>
-      </header>
-    <div class="container py-5">
-      <h2 class="text-center mb-4">Tarefas</h2>
-
-      <div class="row g-4">
-
-        <!-- A FAZER -->
-        <div class="col-md-4">
-          <h4 class="text-dark mb-3">A Fazer</h4>
-
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Descrição: Alta Prioridade</li>
-                <li class="list-group-item">Setor: Y</li>
-                <li class="list-group-item">Prioridade: Alta</li>
-                <li class="list-group-item">Usuário: A</li>
-              </ul>
-
-              <!-- BOTÕES -->
-              <div class="d-flex justify-content-between mb-3">
-                <button class="btn btn-primary btn-sm">Editar</button>
-                <button class="btn btn-primary btn-sm">Excluir</button>
-              </div>
-
-              <!-- STATUS -->
-              <div class="d-flex gap-2">
-                <select class="form-select form-select-sm">
-                  <option selected>A Fazer</option>
-                  <option>Fazendo</option>
-                  <option>Pronto</option>
-                </select>
-
-                <button class="btn btn-primary btn-sm">
-                  Alterar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- FAZENDO -->
-        <div class="col-md-4">
-          <h4 class="text-dark mb-3">Fazendo</h4>
-
-          <!-- CARD 1 -->
-          <div class="card shadow-sm mb-3">
-            <div class="card-body">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Descrição: Baixa Prioridade</li>
-                <li class="list-group-item">Setor: F</li>
-                <li class="list-group-item">Prioridade: Baixa</li>
-                <li class="list-group-item">Usuário: C</li>
-              </ul>
-
-              <div class="d-flex justify-content-between mb-3">
-                <button class="btn btn-primary btn-sm">Editar</button>
-                <button class="btn btn-primary btn-sm">Excluir</button>
-              </div>
-
-              <div class="d-flex gap-2">
-                <select class="form-select form-select-sm">
-                  <option>A Fazer</option>
-                  <option selected>Fazendo</option>
-                  <option>Pronto</option>
-                </select>
-
-                <button class="btn btn-primary btn-sm">
-                  Alterar
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Descrição: Baixa Prioridade</li>
-                <li class="list-group-item">Setor: G</li>
-                <li class="list-group-item">Prioridade: Baixa</li>
-                <li class="list-group-item">Usuário: D</li>
-              </ul>
-
-              <div class="d-flex justify-content-between mb-3">
-                <button class="btn btn-primary btn-sm">Editar</button>
-                <button class="btn btn-primary btn-sm">Excluir</button>
-              </div>
-
-              <div class="d-flex gap-2">
-                <select class="form-select form-select-sm">
-                  <option>A Fazer</option>
-                  <option selected>Fazendo</option>
-                  <option>Pronto</option>
-                </select>
-
-                <button class="btn btn-primary btn-sm">
-                  Alterar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PRONTO -->
-        <div class="col-md-4">
-          <h4 class="text-dark mb-3">Pronto</h4>
-
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Descrição: Concluída</li>
-                <li class="list-group-item">Setor: H</li>
-                <li class="list-group-item">Prioridade: Média</li>
-                <li class="list-group-item">Usuário: D</li>
-              </ul>
-
-              <div class="d-flex justify-content-between mb-3">
-                <button class="btn btn-primary btn-sm">Editar</button>
-                <button class="btn btn-primary btn-sm">Excluir</button>
-              </div>
-
-              <div class="d-flex gap-2">
-                <select class="form-select form-select-sm">
-                  <option>A Fazer</option>
-                  <option>Fazendo</option>
-                  <option selected>Pronto</option>
-                </select>
-
-                <button class="btn btn-primary btn-sm">
-                  Alterar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Gerenciar Tarefas</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h4 class="text-center">A Fazer</h4>
+        <div id="tarefas-afazer"></div>
+      </div>
+      <div class="col-md-4">
+        <h4 class="text-center">Fazendo</h4>
+        <div id="tarefas-fazendo"></div>
+      </div>
+      <div class="col-md-4">
+        <h4 class="text-center">Pronto</h4>
+        <div id="tarefas-pronto"></div>
       </div>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <!-- MODAL DE EDIÇÃO -->
+  <div class="modal fade" id="modalEditarTarefa" tabindex="-1" aria-labelledby="modalEditarTarefaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarTarefaLabel">Editar Tarefa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formEditarTarefa">
+            <div class="mb-3">
+              <label for="inputDescricao" class="form-label">Descrição</label>
+              <input type="text" class="form-control" id="inputDescricao" required>
+            </div>
+            <div class="mb-3">
+              <label for="inputSetor" class="form-label">Setor</label>
+              <input type="text" class="form-control" id="inputSetor" required>
+            </div>
+            <div class="mb-3">
+              <label for="inputPrioridade" class="form-label">Prioridade</label>
+              <select class="form-select" id="inputPrioridade" required>
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta">Alta</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="inputStatus" class="form-label">Status</label>
+              <select class="form-select" id="inputStatus" required>
+                <option value="a fazer">A Fazer</option>
+                <option value="fazendo">Fazendo</option>
+                <option value="pronto">Pronto</option>
+              </select>
+            </div>
+            <input type="hidden" id="idTarefaEditar">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="btnSalvarEdicao">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./gerenciamentoTarefas.js"></script>
+</body>
 </html>
-```

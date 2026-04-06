@@ -44,9 +44,45 @@ async function listarTarefas(req, res) {
     }
 }
 
+async function editarTarefas(req, res) {
+    try {
+        const { id } = req.params;
+        const { descricao, setor, prioridade, status } = req.body;
+
+        const tarefa = await usuariosService.editarTarefas(
+            id,
+            descricao,
+            setor,
+            prioridade,
+            status
+        );
+
+        res.json(tarefa);
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
+}
+
+async function excluirTarefas(req, res) {
+    try {
+        const { id } = req.params;
+
+        const tarefa = await usuariosService.excluirTarefas(id);
+
+        res.json({
+            mensagem: "Tarefa excluída com sucesso",
+            tarefa
+        });
+    } catch (erro) {
+        res.status(400).json({ erro: erro.message });
+    }
+}
+
 module.exports = {
     criarUsuario,
     criarTarefa,
     listarUsuarios,
-    listarTarefas
+    listarTarefas,
+    editarTarefas,
+    excluirTarefas
 };
