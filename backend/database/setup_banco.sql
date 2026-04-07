@@ -1,0 +1,20 @@
+CREATE DATABASE gerenciamento_tarefas;
+
+CREATE TABLE Usuarios (
+    id_usuario SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE Tarefa (
+    id_tarefa SERIAL PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    descricao TEXT NOT NULL,
+    setor VARCHAR(50) NOT NULL,
+    prioridade VARCHAR(10) NOT NULL CHECK (prioridade IN ('baixa','media','alta')),
+    data_cadastro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(10) NOT NULL DEFAULT 'a fazer' CHECK (status IN ('a fazer','fazendo','pronto')),
+    CONSTRAINT fk_usuario
+        FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
+        ON DELETE CASCADE
+);

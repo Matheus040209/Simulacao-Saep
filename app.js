@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const usuariosController = require('./controllers/usuariosController');
+const usuariosController = require('./backend/controllers/usuariosController');
 
 app.use(express.static('public'));
 app.use(express.json());
