@@ -26,7 +26,7 @@ npm install
 
 ### 3️⃣ Execução do sistema
 
-Na pasta raiz do projeto, coloque o seguinte comando:
+No terminal, coloque o seguinte comando:
 
 ```
 node app.js
