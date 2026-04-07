@@ -1,4 +1,4 @@
-# 🚀 Simulação SAEP - Gerenciador de Tarefas Kanban
+# 🚀 Simulação SAEP - Gerenciador de Tarefas
 
 **Aluno**: Matheus Spilmam<br>
 **Professor**: Michel Tartas<br><br>
