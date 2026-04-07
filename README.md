@@ -32,7 +32,7 @@ Na pasta raiz do projeto, coloque o seguinte comando:
 node app.js
 ```
 
-### 3️⃣ Visualização do site
+### 4️⃣ Visualização do site
 
 Na barra de pesquisa do navegador, coloque:
 
